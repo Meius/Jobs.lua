@@ -26,3 +26,52 @@ DarkRP.createCategory {
   startExpanded = true, -- Whether the category is expanded when you open the F4 menu.
   color = Color(215, 180, 36, 255), -- The color of the category header.
 } 
+DarkRP.createCategory {
+  name = "Citizens", -- The name of the category.
+  categorises = "jobs", -- What it categorises. MUST be one of "jobs", "entities", "shipments", "weapons", "vehicles", "ammo".
+  startExpanded = true, -- Whether the category is expanded when you open the F4 menu.
+  color = Color(20, 150, 20, 255), -- The color of the category header.
+  sortOrder = 1,
+} 
+DarkRP.createCategory {
+  name = "Civil Protection", -- The name of the category.
+  categorises = "jobs", -- What it categorises. MUST be one of "jobs", "entities", "shipments", "weapons", "vehicles", "ammo".
+  startExpanded = true, -- Whether the category is expanded when you open the F4 menu.
+  color = Color(0, 60, 255, 255), -- The color of the category header.
+  sortOrder = 2,
+} 
+DarkRP.createCategory {
+  name = "Gangsters", -- The name of the category.
+  categorises = "jobs", -- What it categorises. MUST be one of "jobs", "entities", "shipments", "weapons", "vehicles", "ammo".
+  startExpanded = true, -- Whether the category is expanded when you open the F4 menu.
+  color = Color(124, 124, 124, 255), -- The color of the category header.
+  sortOrder = 3,
+} 
+DarkRP.createCategory {
+  name = "Pistols", -- The name of the category.
+  categorises = "entities", -- What it categorises. MUST be one of "jobs", "entities", "shipments", "weapons", "vehicles", "ammo".
+  startExpanded = true, -- Whether the category is expanded when you open the F4 menu.
+  color = Color(255, 0, 0, 150), -- The color of the category header.
+  allowed = {TEAM_GUN}, 
+} 
+DarkRP.createCategory {
+  name = "SMGS", -- The name of the category.
+  categorises = "entities", -- What it categorises. MUST be one of "jobs", "entities", "shipments", "weapons", "vehicles", "ammo".
+  startExpanded = true, -- Whether the category is expanded when you open the F4 menu.
+  color = Color(255, 0, 0, 150), -- The color of the category header.
+  allowed = {TEAM_GUN}, 
+} 
+DarkRP.createCategory {
+  name = "SMGS", -- The name of the category.
+  categorises = "shipments", -- What it categorises. MUST be one of "jobs", "entities", "shipments", "weapons", "vehicles", "ammo".
+  startExpanded = true, -- Whether the category is expanded when you open the F4 menu.
+  color = Color(255, 0, 0, 150), -- The color of the category header.
+  allowed = {TEAM_GUN}, 
+} 
+DarkRP.createCategory {
+  name = "Pistols", -- The name of the category.
+  categorises = "shipments", -- What it categorises. MUST be one of "jobs", "entities", "shipments", "weapons", "vehicles", "ammo".
+  startExpanded = true, -- Whether the category is expanded when you open the F4 menu.
+  color = Color(255, 0, 0, 150), -- The color of the category header.
+  allowed = {TEAM_GUN}, 
+} 
