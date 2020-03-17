@@ -82,7 +82,8 @@ TEAM_CITIZEN = DarkRP.createJob("Citizen", {
     vote = false,
     hasLicense = false,
     candemote = false,
-    category = "Citizens"
+    category = "Citizens",
+	sortOrder = 1,
 })
 
 TEAM_FARMER = DarkRP.createJob("Farmer", {
@@ -96,13 +97,14 @@ TEAM_FARMER = DarkRP.createJob("Farmer", {
     description = [[Farmers are the driving force behind this servers agricultural industry. If you get into arable farming, you will spend your life in the great outdoors tending to crops. You buy your resources through the f4 menu and sell your crops to the farmers market spread through out the map. ]],
     weapons = {},
     command = "farmer",
-    max = 0,
+    max = 3,
     salary = 65,
     admin = 0,
     vote = false,
     hasLicense = false,
     candemote = false,
-    category = "Citizens"
+    category = "Citizens",
+	sortOrder = 2,
 })
 
 TEAM_MEDIC = DarkRP.createJob("Doctor", {
@@ -118,6 +120,7 @@ TEAM_MEDIC = DarkRP.createJob("Doctor", {
     hasLicense = false,
     candemote = true,
     category = "Citizens",
+	sortOrder = 3,
     medic = true,
     PlayerSpawn = function(ply)
         ply:SetArmor(25)
@@ -136,28 +139,14 @@ TEAM_DJ = DarkRP.createJob("DJ Lawin", {
     vote = false,
     hasLicense = false,
     candemote = true,
-    category = "Citizens"
+    category = "Citizens",
+	sortOrder = 4,
 })
 
 TEAM_GUN = DarkRP.createJob("Gun Dealer", {
     color = Color(255, 140, 0, 255),
     model = {"models/player/monk.mdl"},
     description = [[A Gun Dealer is the only person who can sell guns to other people. Make sure you aren't caught selling illegal firearms to the public! You might get arrested!]],
-    weapons = {},
-    command = "hgundealer",
-    max = 1,
-    salary = 45,
-    admin = 0,
-    vote = false,
-    hasLicense = false,
-    candemote = true,
-    category = "Citizens"
-})
-
-TEAM_HGUN = DarkRP.createJob("Heavy Gun Dealer", {
-    color = Color(255, 211, 0, 255),
-    model = {"models/mitch/badasses/playermodels/grigori.mdl"},
-    description = [[A Heavy Gun Dealer is the only person who can sell heavy guns to other people. Make sure you aren't caught selling illegal firearms to the public! You might get arrested!]],
     weapons = {},
     command = "gundealer",
     max = 1,
@@ -166,7 +155,24 @@ TEAM_HGUN = DarkRP.createJob("Heavy Gun Dealer", {
     vote = false,
     hasLicense = false,
     candemote = true,
-    category = "Citizens"
+    category = "Citizens",
+	sortOrder = 5,
+})
+
+TEAM_HGUN = DarkRP.createJob("Heavy Gun Dealer", {
+    color = Color(255, 211, 0, 255),
+    model = {"models/mitch/badasses/playermodels/grigori.mdl"},
+    description = [[A Heavy Gun Dealer is the only person who can sell heavy guns to other people. Make sure you aren't caught selling illegal firearms to the public! You might get arrested!]],
+    weapons = {},
+    command = "heavygundealer",
+    max = 1,
+    salary = 45,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = true,
+    category = "Citizens",
+	sortOrder = 6,
 })
 
 // Cops
@@ -185,6 +191,7 @@ If you die you will get demoted.]],
     hasLicense = true,
     candemote = true,
     category = "Civil Protection",
+	sortOrder = 7,
     mayor = true,
     PlayerSpawn = function(ply)
         ply:SetArmor(100)
@@ -219,6 +226,7 @@ TEAM_POLICE = DarkRP.createJob("Police", {
     hasLicense = true,
     candemote = true,
     category = "Civil Protection",
+	sortOrder = 8,
     PlayerSpawn = function(ply)
         ply:SetArmor(50)
     end
@@ -247,6 +255,7 @@ TEAM_FBI = DarkRP.createJob("FBI", {
     hasLicense = true,
     candemote = false,
     category = "Civil Protection",
+	sortOrder = 9,
     PlayerSpawn = function(ply)
         ply:SetArmor(100)
     end,
@@ -291,6 +300,7 @@ TEAM_UA = DarkRP.createJob("Undercover Agent", {
     hasLicense = true,
     candemote = false,
     category = "Civil Protection",
+	sortOrder = 10,
     ammo = {
         ["pistol"] = 60
     },
@@ -320,6 +330,7 @@ TEAM_SPIDERMAN = DarkRP.createJob("Spiderman", {
     hasLicense = true,
     candemote = false,
     category = "Civil Protection",
+	sortOrder = 11,
     ammo = {
         ["pistol"] = 60
     },
@@ -347,17 +358,19 @@ TEAM_THIEF = DarkRP.createJob("Thief", {
     description = [[The Ideal thief practices Theft as an art form, not as a way of survival. The Ideal Thief does not apply force to any person or object: Assassinations can be quick and simple, Locks can be picked with swift fluid motions using the Lock picking tool and keypads / Fading doors can be unlocked using the Keypad cracker, no force should be necessary unless the owners start to fight back. The Ideal Thief knows that trickery, deception, and intelligence will always triumph over physical strength.]],
     weapons = {"lockpickadv_swep", "keypad_cracker"},
     command = "thief",
+	sortOrder = 12,
     max = 3,
     salary = 45,
     admin = 0,
     vote = false,
     hasLicense = false,
     candemote = true,
-    category = "Gangsters"
+    category = "Gangsters",
+	sortOrder = 12,
 })
 
 TEAM_HACKER = DarkRP.createJob("Hacker", {
-    color = Color(117, 0, 0, 255),
+    color = Color(83, 0, 168, 255),
     model = {"models/player/aiden_pearce.mdl"},
     description = [[You are an advanced thief that can hack in to bases with equipment bought from the F4 menu, with the phone you can also connect to other peoples cameras, steal cars and do alot more.]],
     weapons = {"weapon_hack_phone", "keypad_cracker", "wep_jack_job_drpradio", "lockpickadv_swep"},
@@ -369,14 +382,54 @@ TEAM_HACKER = DarkRP.createJob("Hacker", {
     hasLicense = false,
     candemote = true,
     category = "Gangsters",
+	sortOrder = 13,
     customCheck = function(ply) return CLIENT or
         table.HasValue({"superadmin", "admin", "donator"}, ply:GetNWString("usergroup"))
     end,
     CustomCheckFailMsg = "Donators only.",
 })
 
+TEAM_PF = DarkRP.createJob("Pot Farmer", {
+    color = Color(37, 84, 18, 255),
+    model = {
+        "models/snoopdogg.mdl",
+        "models/player/voikanaa/snoop_dogg.mdl"
+    },
+    description = [[Manage and maintainyour crops bought from the 4F menu.
+Analyze and catalog each individual strain from clone to harvest.
+Implement solid preventative measures against contaminants.
+Your goal is to breed the best pot in town to earn money.]],
+    weapons = {},
+    command = "PF",
+    max = 2,
+    salary = 75,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Gangsters",
+	sortOrder = 14,
+})
+
+TEAM_MC = DarkRP.createJob("Chemist", {
+    color = Color(17, 0, 34, 255),
+    model = {"models/agent_47.mdl"},
+    description = [[Your job is to create a drug made from the ingredients found in the F4 Menu.
+After you have created your drug you can sell it to on of the Drug dealers spread through out the map. ]],
+    weapons = {},
+    command = "MC",
+    max = 2,
+    salary = 100,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Gangsters",
+	sortOrder = 15,
+})
+
 TEAM_GANG1 = DarkRP.createJob("Bloodz", {
-    color = Color(34, 85, 85, 255),
+    color = Color(216, 0, 0, 255),
     model = {
         "models/player/bloodz/slow_1.mdl",
         "models/player/bloodz/slow_2.mdl",
@@ -392,6 +445,7 @@ TEAM_GANG1 = DarkRP.createJob("Bloodz", {
     hasLicense = false,
     candemote = false,
     category = "Gangsters",
+	sortOrder = 16,
     PlayerSpawn = function(ply)
         ply:SetArmor(25)
     end
@@ -415,9 +469,118 @@ The Crips have a long and bitter rivalry with the Bloods. ]],
     hasLicense = false,
     candemote = false,
     category = "Gangsters",
+	sortOrder = 17,
     PlayerSpawn = function(ply)
         ply:SetArmor(25)
     end
 })
 
+TEAM_MAFIA = DarkRP.createJob("Mafia", {
+    color = Color(48, 31, 0, 255),
+    model = {
+        "models/fearless/mafia02.mdl",
+        "models/fearless/mafia04.mdl",
+        "models/fearless/mafia06.mdl",
+        "models/fearless/mafia07.mdl",
+        "models/fearless/mafia09.mdl"
+    },
+    description = [[Mafia is a type of organized crime syndicate whose primary activities are protection racketeering, arbitrating disputes between criminals, and brokering and enforcing illegal agreements and transactions. Mafias often engage in secondary activities such as gambling, loan sharking, drug-trafficking, prostitution, and fraud. ]],
+    weapons = {},
+    command = "mafia",
+    max = 4,
+    salary = 65,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = true,
+    category = "Gangsters",
+	sortOrder = 18,
+	PlayerDeath = function(ply, weapon, killer)
+        ply:teamBan()
+        ply:changeTeam(GAMEMODE.DefaultTeam, true)
+        DarkRP.notifyAll(0, 4, "You have died and there for been demoted.")
+	end
+})
+
+TEAM_DON = DarkRP.createJob("Mafia Boss", {
+    color = Color(17, 10, 0, 255),
+    model = {"models/vito.mdl"},
+    description = [[Mafia is a type of organized crime syndicate whose primary activities are protection racketeering, arbitrating disputes between criminals, and brokering and enforcing illegal agreements and transactions. Mafias often engage in secondary activities such as gambling, loan sharking, drug-trafficking, prostitution, and fraud. 
+Your job is to organize the other mafia members, dont be afraid to kill them of if they dont do their job, as long as its within  the rules.]],
+    weapons = {},
+    command = "don",
+    max = 1,
+    salary = 100,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = true,
+    category = "Gangsters",
+	sortOrder = 19,
+	PlayerDeath = function(ply, weapon, killer)
+        ply:teamBan()
+        ply:changeTeam(GAMEMODE.DefaultTeam, true)
+        DarkRP.notifyAll(0, 4, "You have died and there for been demoted.")
+	end
+})
+
+// Staff
+
+TEAM_MOD = DarkRP.createJob("MOD ON DUTY", {
+    color = Color(179, 247, 245, 255),
+    model = {"models/player/portal/male_02hve.mdl"},
+    description = [[STAFF ON DUTY]],
+    weapons = {},
+    command = "mod",
+    max = 0,
+    salary = 750,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Staff On Duty",
+	sortOrder = 13,
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "admin", "moderator"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "Nice Try",
+})
+
+TEAM_ADMIN = DarkRP.createJob("ADMIN ON DUTY", {
+    color = Color(255, 190, 190, 255),
+    model = {"models/player/anon/anon.mdl"},
+    description = [[STAFF ON DUTY]],
+    weapons = {},
+    command = "Admin",
+    max = 0,
+    salary = 1000,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Staff On Duty",
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "admin"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "Nice Try",
+})
+
+TEAM_SUP = DarkRP.createJob("SUPER-ADMIN ON DUTY ON DUTY", {
+    color = Color(255, 255, 255, 255),
+    model = {"models/player/dementor.mdl","models/player/charple.mdl"},
+    description = [[STAFF ON DUTY]],
+    weapons = {},
+    command = "SU",
+    max = 0,
+    salary = 1000,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Staff On Duty",
+    customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin",}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "Nice Try",
+})
 
